@@ -5,7 +5,7 @@ import {useTelegram} from "./hooks/useTelegram";
 import Form from "./components/Form/Form";
 function App() {
 
-    const {tg, onToggleButton} = useTelegram()
+    const {tg} = useTelegram()
 
     useEffect(() => {
         tg.ready();
@@ -15,7 +15,6 @@ function App() {
     <div className="App">
         <Header/>
         <Form/>
-        <button onClick={onToggleButton}>Main Button</button>
     </div>
   );
 }
