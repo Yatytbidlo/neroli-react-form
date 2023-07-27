@@ -58,13 +58,13 @@ const Form = () => {
             <h3>Введите ваши данные</h3>
             <input className={'input'}
                    type='text'
-                   placeholder={'ФИО'}
+                   placeholder={'Ваше имя'}
                    value={name}
                    onChange={onChangeName}
             />
             <input className={'input'}
                    type='text'
-                   placeholder={"Город проживания"}
+                   placeholder={"Город и адрес проживания"}
                    value={city}
                    onChange={onChangeCity}
             />
