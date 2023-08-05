@@ -35,12 +35,12 @@ const Form = () => {
     }, [])
 
     useEffect(() => {
-        if (!name || !phone) {
+        if (!name || !phone || !city || !style) {
             tg.MainButton.hide();
         } else {
             tg.MainButton.show()
         }
-    }, [name, phone])
+    }, [name, phone, city, style])
 
     const onChangeName = (e) => {
         setName(e.target.value)
