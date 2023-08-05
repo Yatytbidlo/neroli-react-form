@@ -7,6 +7,7 @@ const Form = () => {
     const [city, setCity] = useState('')
     const [phone, setPhone] =
     useState('')
+    const [style, setStyle] = useState('')
 
     const {tg} = useTelegram()
 
@@ -15,6 +16,7 @@ const Form = () => {
             name,
             city,
             phone,
+            style
         }
         tg.sendData(JSON.stringify(data))
     }, [name, city, phone])
@@ -52,13 +54,17 @@ const Form = () => {
         setPhone(e.target.value)
     }
 
+    const onChangeStyle = (e) => {
+        setStyle(e.target.value)
+    }
+
 
     return (
         <div className={'form'}>
             <h3>Введите ваши данные</h3>
             <input className={'input'}
                    type='text'
-                   placeholder={'Ваше имя'}
+                   placeholder={'Имя и фамилия'}
                    value={name}
                    onChange={onChangeName}
             />
@@ -70,10 +76,15 @@ const Form = () => {
             />
             <input className={'input'}
                    type='number'
-                   placeholder={"Номер телефона"}
+                   placeholder={"Номер мобильного"}
                    value={phone}
                    onChange={onChangePhone}
             />
+            <select value = {style} onChange={onChangeStyle} className={'select'}>
+                <option value = {'classic'}>Классический стиль</option>
+                <option value = {'sport'}>Спортивный стиль</option>
+                <option value = {'modern'}>Современный стиль</option>
+            </select>
         </div>
     );
 };
