@@ -81,9 +81,9 @@ const Form = () => {
                    onChange={onChangePhone}
             />
             <select value = {style} onChange={onChangeStyle} className={'select'}>
-                <option value = {'classic'}>Классический стиль</option>
-                <option value = {'sport'}>Спортивный стиль</option>
-                <option value = {'modern'}>Современный стиль</option>
+                <option value = {'классический'}>Классический стиль</option>
+                <option value = {'спортивный'}>Спортивный стиль</option>
+                <option value = {'современный'}>Современный стиль</option>
             </select>
         </div>
     );
