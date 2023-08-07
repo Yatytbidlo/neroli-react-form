@@ -82,9 +82,9 @@ const Form = () => {
             />
             <select value = {style} onChange={onChangeStyle} className={'select'}>
                 <option value = {'Выберите стиль'}>Выберите стиль</option>
-                <option value = {'классический'}>Классический стиль</option>
-                <option value = {'спортивный'}>Спортивный стиль</option>
-                <option value = {'современный'}>Современный стиль</option>
+                <option value = {'Классический стиль'}>Классический стиль</option>
+                <option value = {'Спортивный стиль'}>Спортивный стиль</option>
+                <option value = {'Современный стиль'}>Современный стиль</option>
             </select>
         </div>
     );
