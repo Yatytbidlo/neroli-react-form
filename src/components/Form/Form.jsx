@@ -35,12 +35,12 @@ const Form = () => {
     }, [])
 
     useEffect(() => {
-        if (!name || !phone || !city) {
+        if (!name || !phone || !city || !style) {
             tg.MainButton.hide();
         } else {
             tg.MainButton.show()
         }
-    }, [name, phone, city])
+    }, [name, phone, city, style])
 
     const onChangeName = (e) => {
         setName(e.target.value)
@@ -81,6 +81,7 @@ const Form = () => {
                    onChange={onChangePhone}
             />
             <select value = {style} onChange={onChangeStyle} className={'select'}>
+                <option value = {'Выберите стиль'}>Выберите стиль</option>
                 <option value = {'классический'}>Классический стиль</option>
                 <option value = {'спортивный'}>Спортивный стиль</option>
                 <option value = {'современный'}>Современный стиль</option>
