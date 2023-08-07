@@ -35,12 +35,12 @@ const Form = () => {
     }, [])
 
     useEffect(() => {
-        if (!name || !phone || !city || !style) {
+        if (!name || !phone || !city) {
             tg.MainButton.hide();
         } else {
             tg.MainButton.show()
         }
-    }, [name, phone, city, style])
+    }, [name, phone, city])
 
     const onChangeName = (e) => {
         setName(e.target.value)
@@ -61,7 +61,7 @@ const Form = () => {
 
     return (
         <div className={'form'}>
-            <h3>Введите ваши данные</h3>
+            <h3>Заполните все поля для доставки</h3>
             <input className={'input'}
                    type='text'
                    placeholder={'Имя и фамилия'}
