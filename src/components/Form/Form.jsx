@@ -86,6 +86,13 @@ const Form = () => {
                 <option value = {'Спортивный стиль'}>Спортивный стиль</option>
                 <option value = {'Современный стиль'}>Современный стиль</option>
             </select>
+
+            <select value = {volume} onChange={onChangeVolume} className={'select'}>
+                <option>Выберите объём</option>
+                <option value = {'Пробник'}>Пробник</option>
+                <option value = {'30мл'}>30мл</option>
+                <option value = {'50мл'}>50мл</option>
+            </select>
         </div>
     );
 };
