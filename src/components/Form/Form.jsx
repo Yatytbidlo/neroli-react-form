@@ -8,6 +8,7 @@ const Form = () => {
     const [phone, setPhone] =
     useState('')
     const [style, setStyle] = useState('')
+    const [volume, setVolume] = useState('')
 
     const {tg} = useTelegram()
 
@@ -16,10 +17,11 @@ const Form = () => {
             name,
             city,
             phone,
-            style
+            style,
+            volume
         }
         tg.sendData(JSON.stringify(data))
-    }, [name, city, phone, style])
+    }, [name, city, phone, style, volume])
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
@@ -35,7 +37,7 @@ const Form = () => {
     }, [])
 
     useEffect(() => {
-        if (!name || !phone || !city || !style) {
+        if (!name || !phone || !city || !style || !volume) {
             tg.MainButton.hide();
         } else {
             tg.MainButton.show()
@@ -56,6 +58,10 @@ const Form = () => {
 
     const onChangeStyle = (e) => {
         setStyle(e.target.value)
+    }
+
+    const onChangeVolume = (e) => {
+        setVolume(e.target.value)
     }
 
 
